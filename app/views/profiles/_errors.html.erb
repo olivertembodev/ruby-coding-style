@@ -1,0 +1,7 @@
+<%= render 'layouts/errors', obj: user %>
+
+<% if user.errors.present? %>
+  <div class="alert alert-danger" role="alert">
+    <%= user.errors.full_messages.join(', ') %>
+  </div>
+<% end %>

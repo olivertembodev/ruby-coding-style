@@ -1,0 +1,7 @@
+<% if obj.errors.present? %>
+  <script type="text/javascript">
+    <% obj.errors.full_messages.each do |f| %>
+      toastr.error('<%= f %>');
+    <% end %>
+  </script>
+<% end %>

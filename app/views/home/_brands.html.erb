@@ -1,0 +1,14 @@
+      <section class="crown-brands py-5">
+      <h3 class="h2 text-center py-5"><strong>Participating Brands</strong></h3>
+      <div class="brands-container container-xl pb-5">
+      <% @stores.each do |store| %>
+        <div class="brand">
+          <!-- <img src="https://via.placeholder.com/200x60?text=Brand+Logo" alt="Brand" /> -->
+          <%= image_tag(store.main_image) if store.main_image.present?%>
+        </div>
+        <% end %>
+
+
+
+        </div>
+    </section>

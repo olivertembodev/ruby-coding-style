@@ -1,0 +1,25 @@
+<% @page_title = 'Blogs' %>
+<% content_for :banner do %>
+  <%= render 'layouts/banner/coindesk' %>
+<% end %>
+
+<section class="container-xl">
+  <% latest_blog = Blog.last %>
+  <% if latest_blog %>
+    <%= render 'latest_blog', blog: latest_blog.decorate %>
+  <% end %>
+  <div class="crown-blogs-list">
+    <% @blogs.each do |blog| %>
+      <%= render 'card', blog: blog.decorate %>
+    <% end %>
+  </div>
+
+  <!-- PAGINATION -->
+  <!-- Live site has a different implimentation via a plugin. You can swap this out for that -->
+  <div class="pb-5">
+    <%= will_paginate(@blogs, renderer: CrownbitLinkRenderer, class: 'crown-pagination justify-content-center', link_options: { class: 'crown-page-link'}) %>
+  </div>
+
+</section>
+
+

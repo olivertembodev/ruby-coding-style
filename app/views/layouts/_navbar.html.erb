@@ -1,0 +1,87 @@
+<nav class="navbar navbar-expand-lg">
+  <div class="crown-nav-container">
+    <%= link_to home_index_path, class: "navbar-brand" do %>
+      <%= image_tag 'logo.png', alt: 'CrownBits Logo'  %>
+    <% end %>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarNavDropdown"
+      aria-controls="navbarNavDropdown"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav w-100 d-flex justify-content-between align-items-center">
+        <li class="nav-item <%= active_class('home')%>">
+          <%= link_to "Home", home_index_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item <%= active_class('stores')%>">
+          <%= link_to "Stores", stores_path , class: "nav-link" %>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link" href="#">Rewards</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Guide</a>
+        </li>
+        <li class="nav-item <%= active_class('blogs')%>">
+          <%= link_to "Blog", blogs_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle d-flex align-items-center"
+            href="#"
+            id="navbarDropdownMenuLink"
+            role="button"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+          <%= image_tag 'canada.png', alt: 'Canada Flag' %>
+            EN
+          </a>
+          <div class="dropdown-menu crown-dropdown" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="#">
+              <%= image_tag 'canada.png', alt: 'Canada Flag' %>
+              EN
+            </a>
+            <a class="dropdown-item" href="#">
+              <%= image_tag 'france.png', alt: 'Canada Flag' %>
+              FR
+            </a>
+          </div>
+        </li>
+        <li class="nav-item logout">
+          <% if current_user.present? %>
+            <%= link_to "Logout", destroy_user_session_url,class: "nav-link",method: :delete %>
+          <% else %>
+            <%= link_to "Login", new_user_session_path,class: "nav-link"  %>
+          <% end %>
+        </li>
+        <% if current_user %>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <%= image_tag('wallet.svg', alt: 'Wallet') %>
+            </a>
+          </li>
+          <li class="nav-item profile">
+            <%= link_to profile_path, class: 'nav-link' do %>
+              <span class="mr-5">
+                <%= current_user.name %>
+              </span>
+              <%= image_tag current_user.decorate.avatar_url,
+                    width: '60px',
+                    height: '60px',
+                    alt: current_user.name,
+                    class: 'crown-profile-img' %>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</nav>

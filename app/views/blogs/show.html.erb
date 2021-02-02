@@ -1,0 +1,35 @@
+<% @page_title = ['Blogs', @blog.title].join('-') %>
+<% content_for :banner do %>
+  <%= render 'layouts/banner/coindesk' %>
+<% end %>
+
+<section class="container-xl my-5">
+  <%= link_to "Back", blogs_path, class: "crown-link-blue" %>
+  <div class="crown-blog my-5">
+    <%= image_tag @blog.image_url_for_head, alt: @blog.image.filename.to_s %>
+
+    <div class="blog-user d-flex font-weight-bold my-5">
+      <%= image_tag(@blog.author.decorate.avatar_url, alt: @blog.author.name) %>
+      <div class="d-flex flex-column ml-4">
+        <p class="blog-name">
+          <%= @blog.author.try(:name) %>
+        </p>
+        <div class="d-flex">
+          <p class="blog-date">
+            <%= @blog.updated_at %>
+          </p>
+          <p class="blog-read-time">
+            <%= @blog.time_to_read %>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="content my-5">
+      <h4 class="h3 font-weight-bold my-5">
+        <%= @blog.title %>
+      </h4>
+      <%= @blog.description %>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,314 @@
+/* GENERAL */
+
+:root {
+  font-size: 14px;
+
+  /* THEME COLORS */
+  --color-gold: #d9be67;
+  --color-blue: #0000ce;
+  --color-dark: #242424;
+  --color-light: #ffffff;
+  --color-light-gold: #f7f3d5;
+  --shadow-sm: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+* {
+  font-family: "Montserrat", sans-serif !important;
+}
+
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+a.crown-link {
+  color: var(--color-dark);
+  text-decoration: underline;
+}
+
+.crown-container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 3rem;
+}
+
+/* BUTTONS */
+.crown-btn {
+  color: var(--color-light);
+  font-weight: bold;
+  /* Make round button */
+  border-radius: 1000px;
+  min-width: 10rem;
+  box-shadow: var(--shadow-sm);
+  padding: 0.5rem 2rem;
+}
+
+.crown-btn:hover {
+  color: #fff;
+}
+
+.crown-btn:focus {
+  box-shadow: var(--shadow-sm);
+}
+
+.crown-btn-lg {
+  padding: 0.8rem 3rem;
+}
+
+.crown-btn-blue {
+  background-color: var(--color-blue);
+}
+.crown-btn-gold {
+  background-color: var(--color-gold);
+}
+.crown-btn-dark {
+  background-color: var(--color-dark);
+}
+
+/* NAVBAR */
+
+.crown-nav-container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar,
+.navbar-brand {
+  padding: 0;
+}
+
+.navbar-brand {
+  height: 3.5rem;
+  display: inline-block;
+  margin-right: 5rem;
+}
+
+.navbar-brand img {
+  height: 100%;
+}
+
+.nav-item > .nav-link {
+  font-size: 1rem;
+  color: var(--color-dark);
+}
+
+.nav-item.active > .nav-link {
+  font-weight: 700;
+  color: var(--color-blue);
+}
+
+.nav-item.logout > .nav-link {
+  font-weight: 700;
+  color: var(--color-gold);
+}
+
+.nav-item.dropdown img {
+  height: 1rem;
+  margin-right: 0.5rem;
+}
+
+.nav-item.dropdown .dropdown-menu {
+  min-width: 7rem;
+  left: -1.2rem;
+}
+
+.navbar-toggler {
+  color: var(--color-dark);
+  border: 1px solid var(--color-dark);
+  height: 2.5rem;
+  line-height: 0;
+}
+
+.navbar-toggler-icon {
+  width: 1.5rem;
+  height: 2px;
+  background-color: var(--color-dark);
+  position: relative;
+}
+
+.navbar-toggler-icon:before,
+.navbar-toggler-icon:after {
+  content: "";
+  width: 1.5rem;
+  height: 2px;
+  background-color: var(--color-dark);
+  position: absolute;
+  left: 0px;
+}
+
+.navbar-toggler-icon:before {
+  top: -5px;
+}
+
+.navbar-toggler-icon:after {
+  bottom: -5px;
+}
+
+.crown-profile-img {
+  width: 60px;
+  height: 60px;
+  border-radius: 30px;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* DROPDOWN */
+.crown-dropdown {
+  border: none;
+  border-radius: 0 0 1rem 1rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.crown-dropdown .dropdown-item.active,
+.crown-dropdown .dropdown-item:active {
+  color: #fff;
+  text-decoration: none;
+  background-color: var(--color-blue);
+}
+
+/* INPUT FIELDS */
+.crown-input-grp {
+  position: relative;
+  width: 100%;
+}
+
+.crown-input-grp input {
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid var(--color-light);
+  color: var(--color-light);
+  outline: none;
+  padding: 6px 4px;
+}
+
+.crown-input-grp label {
+  position: absolute;
+  top: -1rem;
+  left: 16px;
+  font-weight: bold;
+}
+
+.crown-input-grp input[required] ~ label::after {
+  content: "*";
+  margin-left: 2px;
+}
+
+/* FOOTER */
+
+.crown-footer {
+  background-image: url(/Assets/footer-img.png);
+  height: 550px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.crown-footer .social-icons {
+  margin-bottom: 1rem;
+}
+
+/* PAGINATION */
+
+.crown-pagination {
+  display: flex;
+}
+
+.crown-page-item {
+  width: 1.5rem;
+  height: 1.5rem;
+  text-align: center;
+  line-height: 1.6;
+  list-style: none;
+  margin: 0 1.2rem;
+  font-weight: 700;
+  border-radius: 3px;
+}
+
+.crown-page-item .elipsis {
+  color: var(--color-dark);
+  pointer-events: none;
+}
+
+.crown-page-link {
+  color: var(--color-dark);
+}
+
+.crown-page-link:hover {
+  color: var(--color-dark);
+}
+
+.crown-page-item.active {
+  background-color: var(--color-gold);
+}
+
+.crown-page-item.active .crown-page-link {
+  color: var(--color-light);
+}
+
+/* Medium devices (tablets, 768px and down) */
+@media (max-width: 992px) {
+  .navbar-brand {
+    height: 2rem;
+    margin: 0;
+  }
+}
+
+/* COIN DESK BANNER */
+.coindesk-info-banner {
+  display: none;
+}
+
+.coindesk-info-banner > p {
+  margin-bottom: 0;
+  text-align: right;
+}
+
+.info {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.info-group {
+  margin-right: 2rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.info-group p {
+  margin-right: 1rem;
+  margin-bottom: 0;
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 992px) {
+  .coindesk-info-banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #001250;
+    padding: 1rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  .coindesk-info-banner {
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5rem;
+  }
+}
+
+a.crown-link-blue {
+  color: var(--color-blue);
+  text-decoration: underline;
+}

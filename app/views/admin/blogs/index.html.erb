@@ -1,0 +1,44 @@
+<div class="container-fluid">
+  <%= link_to "Add New Blog", new_admin_blog_path, class: "btn btn-lg btn-primary pull-right margin-tp" %>
+    <!-- DataTales Example -->
+  <div class="card shadow mb-4">
+    <div class="card-body">
+      <div class="table-responsive">
+           <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+              <thead>
+                  <tr>
+                    <th>No.</th>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>image</th>
+                    <th>Author</th>
+                     <th>Action</th>
+                  </tr>
+              </thead>
+              <tbody>
+                <% @admin_blogs.each_with_index do |blog,index| %>
+                  <tr>
+                    <td><%= index + 1 %></td>
+                    <td><%= blog.title %></td>
+                    <td><%= truncate(strip_tags(blog.description.to_s), length: 30) %></td>
+                    <td><%= image_tag(blog.image,style: 'height: 100px;width: 100px') if blog.image.present? %></td>
+                    <td><%= blog.author.try(:name) %></td>
+                    <td class="text-center">
+                      <span>
+                      <%= link_to '<i class="fa fa-edit icon_link with-tip no-text"></i>'.html_safe, edit_admin_blog_path(blog), class: "edit ", title: "edit"%>&nbsp; &nbsp;
+                      </span>
+                      <span>
+                     
+                      <%= link_to '<i class="fa fa-trash icon_link with-tip no-text"></i>'.html_safe,  admin_blog_path(blog), method: :delete, data: { confirm: 'Are you sure?' } ,class: "delete " , title: "delete" %>
+                          
+                      </span>
+                  </td>
+                  </tr>
+                  <% end %>
+              </tbody>
+          </table>
+      </div>
+    </div>
+  </div>
+
+</div>

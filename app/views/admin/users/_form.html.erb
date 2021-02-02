@@ -1,0 +1,49 @@
+<%= render 'layouts/errors', obj: @user %>
+  <%= form_for [:admin, @user], {class: "form-horizontal"} do |form| %>
+  <div class="col-lg-12">
+    <div class="form-group">
+      <%=form.label :roles, 'Role', class: "control-label col-sm-2"%>
+      <div class="col-sm-6">
+      <%=form.select :role_ids , Role.all.map{|role| [role.name, role.id] }, {}, { class: 'form-control multi-select', placeholder: 'Select Role', multiple:  true } %>
+      </div>
+    </div>
+    <div class="form-group ">
+      <div class="col-sm-6">
+        <%= form.label :name %>
+        <%= form.text_field :name, class: "form-control", placeholder:"Name" %>
+      </div>
+    </div>
+    <div class="form-group ">
+    
+      <div class="col-sm-6">
+        <%= form.label :email, 'Email *'%>
+        <%= form.email_field :email, class: "form-control", placeholder:"Enter email" %>
+      </div>
+    </div>
+    <div class="form-group ">
+      <label class="control-label col-sm-2" for="email">Phone:</label>
+      <div class="col-sm-6">
+        <%= form.phone_field :phone, class: "form-control", placeholder:"Enter Phone" %>
+      </div>
+    </div>
+    <div class="form-group ">
+      <label class="control-label col-sm-2" for="email">Wallet Address:</label>
+      <div class="col-sm-6">
+        <%= form.text_field :wallet_address, class: "form-control", placeholder:"Enter Wallet Address" %>
+      </div>
+    </div>
+    <div class="form-group ">
+      <label class="control-label col-sm-2" for="email">Password</label>
+      <div class="col-sm-6">
+        <%= form.password_field :password, class: "form-control", placeholder:"Enter password" %>
+      </div>
+    </div>
+    <div class="form-group ">  
+    <div class="col-sm-2"></div>      
+      <div class="col-sm-12">
+        <%= form.submit  class: "btn btn-primary" %>
+        <a  href="/admin/users" class="btn btn-secondary">Back</a>
+      </div>
+    </div>
+  </div>
+  <% end %>

@@ -1,0 +1,41 @@
+<section class="crown-integrate">
+    <div class="crown-container text-white integrate-container">
+      <div class="form">
+        <h3 class="h2"><strong>Want to integrate your store with Crownbits?</strong></h3>
+        <p class="py-4">
+          Just fill out this form and we’ll add support for your store as soon as possible.
+        </p>
+          <%= form_for @store, class: 'pb-5' do |f| %>
+            <div class="row">
+              <div class="col-6 crown-input-grp my-5">
+                <%=f.text_field :name, required: 'false'%>
+                <label for="storeName">Store Name</label>
+              </div>
+
+              <div class="col-6 crown-input-grp my-5">
+                <%=f.text_field :url, required: 'false'%>
+                <label for="storeUrl">Store URL</label>
+              </div>
+
+              <div class="col-12 crown-input-grp my-5">
+                <%= f.text_field :affiliate_name %>
+                <label for="storeName">Which affiliate you are a part of?</label>
+              </div>
+
+              <div class="col-12 crown-input-grp my-5">
+                <%= f.text_field :affiliate_id %>
+                <label for="storeUrl">What is your affiliate ID?</label>
+              </div>
+            </div>
+            <%= f.submit "Submit" ,class: "btn crown-btn crown-btn-lg crown-btn-blue" %>
+            <%#= link_to "Submit", stores_path, cla  %>
+          <% end %>
+      </div>
+      <div class="image">
+        <!-- <img src="/Assets/lion-img.png" alt="Loin"> -->
+        <%= image_tag("lion-img.png") %>
+      </div>
+
+    </div>
+
+</section>

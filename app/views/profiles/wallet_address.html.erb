@@ -1,0 +1,15 @@
+<% @page_title = ['Profile', 'Edit', 'Wallet Address'].join(' - ') %>
+
+<div class="crown-settings-edit-container">
+  <div class="crown-settings-edit-card">
+    <h5>Edit Wallet Address</h5>
+    <%= form_for @user, url: profile_path(section: :wallet_address) do |f| %>
+      <%= render 'errors', user: @user %>
+      <div class="crown-settings-edit-input-grp">
+        <%= f.text_field :wallet_address %>
+        <label for="wallet_address">Enter new Wallet Address </label>
+      </div>
+      <button type="submit" class="btn crown-btn crown-btn-lg crown-btn-blue">Edit</button>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+<!-- LATEST BLOG -->
+<div class="crown-latest-blog mt-5">
+  <div class="img-container">
+    <%= image_tag blog.image_url_for_head, alt: blog.image.filename.to_s %>
+  </div>
+  <div class="content">
+    <h4 class="font-weight-bold">
+      <%= blog.title %>
+    </h4>
+    <p class="my-5">
+      <%= truncate(strip_tags(blog.description.to_s), length: 200) %>
+    </p>
+    <div class="latest-blog-user d-flex font-weight-bold">
+      <%= image_tag blog.author.decorate.avatar_url, alt: blog.author.name %>
+      <div class="d-flex flex-column ml-4">
+        <p class="latest-blog-name">
+          <%= blog.author.try(:name) %>
+        </p>
+        <div class="d-flex">
+          <p class="latest-blog-date">
+            <%= blog.updated_at %>
+          </p>
+          <p class="latest-blog-read-time">
+            <%= link_to blog.time_to_read, blog_path(blog) %>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

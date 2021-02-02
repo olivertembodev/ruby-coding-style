@@ -1,0 +1,15 @@
+<% @page_title = ['Profile', 'Edit', 'Email'].join(' - ') %>
+
+<div class="crown-settings-edit-container">
+  <div class="crown-settings-edit-card">
+    <h5>Edit Email Address</h5>
+    <%= form_for @user, url: profile_path(section: :email) do |f| %>
+      <%= render 'errors', user: @user %>
+      <div class="crown-settings-edit-input-grp">
+        <%= f.email_field :email %>
+        <label for="email">Enter new Email </label>
+      </div>
+      <button type="submit" class="btn crown-btn crown-btn-lg crown-btn-blue">Edit</button>
+    <% end %>
+  </div>
+</div>

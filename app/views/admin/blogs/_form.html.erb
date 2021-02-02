@@ -1,0 +1,45 @@
+<%= render 'layouts/errors', obj: admin_blog %>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+        </div>
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-md-12">
+            <%= form_with(model: [:admin, admin_blog]) do |f| %>
+
+                <div class="form-group">
+                  <%= f.label :title %>
+                  <%=f.text_field :title ,class: 'form-control', placeholder: 'Enter Title', required: 'true'%>
+                </div>
+                <div class="form-group">
+                  <%= f.label :description %>
+                  <%= f.rich_text_area :description ,class: 'form-control', placeholder: 'Enter Description', required: 'true' %>
+                </div>
+                <div class="form-group">
+                  <%=f.label :image %>
+                  <%=f.file_field :image ,class: '' %>
+                  <small>
+
+                  <% if admin_blog.image.present? %>
+                      Already uploaded Image
+                    <%= admin_blog.image.blob.filename %>
+                    <%= image_tag(admin_blog.image, size: '50x50') %>
+                  <%end%>
+                  </small>
+                </div>
+              
+               <%= f.submit  class: "btn btn-primary" %>
+                <a  href="/admin/blogs" class="btn btn-secondary">Back</a>
+               <%=f.hidden_field :user_id ,class: '' %>
+               <%#= f.submit 'Submit Button', class: "btn btn-primary" %>
+            <%end%>
+            </div>
+          </div>
+        </div>        
+      </div>
+    </div>    
+  </div>
+</div>

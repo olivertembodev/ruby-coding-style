@@ -1,0 +1,23 @@
+<%= render 'layouts/errors', obj: @admin_category %>
+
+    <!-- /.row -->
+  <div class="row">
+    <div class="col-lg-6">
+      <%= form_for [:admin, @admin_category] do |f| %>
+        <div class="form-group">
+            <%=f.label :name, "Name <span>*</span>".html_safe%>
+              <%=f.text_field :name ,class: 'form-control', placeholder: 'Enter Category', required: 'true'%>
+            <!-- <p class="help-block">Example block-level help text here.</p> -->
+        </div>
+          <%= f.submit  class: "btn btn-primary" %>
+          <a  href="/admin/categories" class="btn btn-secondary">Back</a>
+          <!-- <button type="reset" class="btn btn-secondary">Reset </button> -->
+      <% end %>
+    </div>
+  </div>
+    <!-- /.row -->
+<!-- /.container-fluid -->
+
+
+
+

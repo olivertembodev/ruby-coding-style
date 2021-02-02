@@ -1,0 +1,134 @@
+/* BLOGS LIST */
+
+.crown-blog-card {
+  box-shadow: var(--shadow-sm);
+  border-radius: 1rem 1rem 0 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+}
+
+.crown-blog-card .img-container {
+  width: 100%;
+  height: 200px;
+}
+.crown-blog-card .img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.crown-blogs-list {
+  display: grid;
+  gap: 4rem;
+  grid-template-columns: 1fr;
+  padding: 4rem 0;
+}
+
+/* Small devices (landscape phones, 576px and up)
+ */
+@media (min-width: 576px) {
+  .crown-blogs-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 992px) {
+  .crown-blogs-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up)
+ */
+@media (min-width: 1200px) {
+  .crown-blogs-list {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* LATEST BLOG */
+
+.latest-blog-user img {
+  width: 60px;
+  height: 60px;
+  border-radius: 30px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.latest-blog-read-time {
+  color: var(--color-blue);
+  margin-left: 1rem;
+}
+
+.crown-latest-blog .img-container {
+  margin-bottom: 2rem;
+  width: 100%;
+  height: 250px;
+}
+
+.crown-latest-blog .content h4 {
+  color: var(--color-gold);
+}
+
+.crown-latest-blog .img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Small devices (landscape phones, 576px and up)
+ */
+@media (min-width: 992px) {
+  .crown-latest-blog {
+    display: flex;
+    align-items: stretch;
+  }
+  .crown-latest-blog .img-container {
+    margin-right: 4rem;
+    margin-bottom: 0;
+    height: initial;
+    align-self: stretch;
+  }
+  .crown-latest-blog .content {
+    padding: 1rem 0;
+  }
+}
+
+a.crown-link-blue {
+  color: var(--color-blue);
+  text-decoration: underline;
+}
+
+/*
+  Blog detail
+*/
+.crown-blog > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.blog-user > img {
+  width: 60px;
+  height: 60px;
+  border-radius: 30px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.blog-read-time {
+  color: var(--color-blue);
+  margin-left: 1rem;
+}
+
+.crown-blog .content h4 {
+  color: var(--color-gold);
+}
+

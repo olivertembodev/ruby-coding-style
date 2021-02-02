@@ -1,0 +1,27 @@
+<% @page_title = ['Profile', @user.name].join(' - ') %>
+
+<% content_for :banner do %>
+  <%= render 'layouts/banner/coindesk' %>
+<% end %>
+
+<section class="container-xl crown-settings my-5">
+  <div class="user">
+    <h4 class="h4 user-name font-weight-bold my-5">
+      Hello <%= @user.name %>
+    </h4>
+    <div class="user-image">
+      <div class="img-container">
+        <%= image_tag @user.image_for_profile_url, alt: @user.name, width: '300px', height: '300px' %>
+      </div>
+      <div class="change-image mt-3">
+        <%= form_for @user, url: profile_path(section: :avatar), html: {id: 'direct-upload-avatar-form', style: 'width:0;height:0;display:none;'} do |f| %>
+          <%= f.file_field :avatar, id: 'user-avatar-change-file' %>
+        <% end %>
+        <a class="crown-link" id="user-avatar-change-photo">Change Photo</a>
+      </div>
+    </div>
+  </div>
+  <div class="user-details my-5 mx-auto">
+    <%= render 'form' %>
+  </div>
+</section>

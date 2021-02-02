@@ -1,0 +1,75 @@
+<%= stylesheet_link_tag 'admin', media: 'all', 'data-turbolinks-track': 'reload' %>
+<%= javascript_pack_tag 'admin', 'data-turbolinks-track': 'reload' %>
+
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="container">
+      <!-- Outer Row -->
+    <div class="row justify-content-center">
+      <div class="col-xl-10 col-lg-12 col-md-9">
+        <div class="card o-hidden border-0 shadow-lg my-5">
+          <div class="card-body p-0">
+              <!-- Nested Row within Card Body -->
+            <div class="row">
+              <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
+              <div class="col-lg-6">
+                <div class="p-5">
+                  <div class="text-center">
+                    <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
+                  </div>
+                  <div class="form-group">
+                    <%= f.email_field :email, autofocus: true, required: true, autocomplete: "email", placeholder: "Email Address...", class: "form-control form-control-user"  %>
+                  </div>
+                  <div class="form-group">
+                    <%= f.password_field :password, autocomplete: "current-password",required: true, placeholder: "Password", class: "form-control form-control-user" %>
+                  </div>
+                  <div class="form-group">
+                    <% if devise_mapping.rememberable? %>
+                      <div class="custom-control custom-checkbox small">
+                        <%= f.check_box :remember_me, class: "" %>
+                        <label class="" for="customCheck">Remember Me</label>
+                      </div>
+                    <% end %>
+                  </div>
+                  <%= f.submit "Login", class: "btn btn-primary btn-user btn-block" %>
+                  <hr>
+                  <a href="index.html" class="btn btn-google btn-user btn-block">
+                    <i class="fab fa-google fa-fw"></i> Login with Google
+                  </a>
+                  <a href="index.html" class="btn btn-facebook btn-user btn-block">
+                    <i class="fab fa-facebook-f fa-fw"></i> Login with Facebook
+                  </a>
+                  <hr>
+                  <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+                    <div class="text-center">
+                      <%= link_to "Forgot Password?", new_password_path(resource_name), class: "small" %><br />
+                    </div>
+                  <% end %>
+                  <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+                    <div class="text-center">
+                      <%= link_to "Create an Account!", new_registration_path(resource_name), class: "small" %>
+                    </div>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
+<style type="text/css">
+  .navbar-expand-lg{
+    display: none
+  }
+  .crown-footer{
+    display: none
+  }
+
+  form#new_user {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+</style>

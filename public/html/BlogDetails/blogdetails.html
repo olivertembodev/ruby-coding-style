@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CrownBits - Blog Details</title>
+
+    <!-- BOOTSTRAP CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+      integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
+      crossorigin="anonymous"
+    />
+
+    <!-- GOOGLE FONTS (Montserrat) -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+
+    <!-- CUSTOM CSS -->
+    <link rel="stylesheet" href="../index.css" />
+    <link rel="stylesheet" href="blogdetails.css" />
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg">
+      <div class="crown-nav-container">
+        <a class="navbar-brand" href="#">
+          <img src="../Assets/logo.png" alt="CrownBits Logo" />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav w-100 d-flex justify-content-between align-items-center">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Stores</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Rewards</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Guide</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Blog</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle d-flex align-items-center"
+                href="#"
+                id="navbarDropdownMenuLink"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                <img src="../Assets/canada.png" alt="Canada Flag" />
+                EN
+              </a>
+              <div class="dropdown-menu crown-dropdown" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="#">
+                  <img src="../Assets/canada.png" alt="Canada Flag" />
+                  EN
+                </a>
+                <a class="dropdown-item" href="#">
+                  <img src="../Assets/france.png" alt="France Flag" />
+                  FR
+                </a>
+              </div>
+            </li>
+            <li class="nav-item logout">
+              <a class="nav-link" href="#">Log out</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <img src="../Assets/wallet.svg" alt="Wallet" />
+              </a>
+            </li>
+            <li class="nav-item profile">
+              <a class="nav-link" href="#">
+                <span class="mr-5">Hello jane</span>
+                <img class="crown-profile-img" src="https://via.placeholder.com/60x60?text=User" alt="Jane" />
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- COINDESK BANNER -->
+    <div class="coindesk-info-banner text-light">
+      <div class="info">
+        <div class="info-group">
+          <p class="coin-name"><strong>Bitcoin</strong></p>
+          <p class="time">24h</p>
+          <!-- change class to text-success if % is positive -->
+          <p class="coin-value text-danger">$17,791.39</p>
+          <p class="percentage text-danger">-2.23%</p>
+        </div>
+        <div class="info-group">
+          <p class="coin-name"><strong>Ethereum</strong></p>
+          <p class="time">24h</p>
+          <p class="coin-value text-danger">$543.86</p>
+          <p class="percentage text-danger">-2.54%</p>
+        </div>
+        <div class="info-group">
+          <p class="coin-name"><strong>XRP</strong></p>
+          <p class="time">24h</p>
+          <p class="coin-value text-danger">$0.549757</p>
+          <p class="percentage text-danger">-2.54%</p>
+        </div>
+      </div>
+      <p>Powered by <strong>Coinesk</strong></p>
+    </div>
+
+    <section class="container-xl my-5">
+      <a href="#" class="crown-link-blue"> Back </a>
+      <div class="crown-blog my-5">
+        <img src="https://via.placeholder.com/500x200?text=Blog+Image" alt="Blog Image" />
+
+        <div class="blog-user d-flex font-weight-bold my-5">
+          <img src="https://via.placeholder.com/60x60?text=User" alt="Jane" />
+          <div class="d-flex flex-column ml-4">
+            <p class="blog-name">Rebecca Brown</p>
+            <div class="d-flex">
+              <p class="blog-date">December 22nd, 2021</p>
+              <p class="blog-read-time">5 min read</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="content my-5">
+          <h4 class="h3 font-weight-bold my-5">BLOG HEADER</h4>
+          <div>
+            <!-- Embed blog content here. Should be html. -->
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consectetur provident neque sequi accusantium
+            atque porro magnam dicta corporis debitis repellendus at minus aspernatur exercitationem maiores sapiente
+            ipsam velit quos rerum, aliquid veritatis corrupti quod consequatur? Recusandae consequuntur, eius
+            similique, consequatur vero nostrum ab quam exercitationem assumenda voluptatibus consectetur architecto
+            cupiditate quisquam dolores quod eos veniam! Nam, voluptate saepe ipsum eius laudantium commodi aut corrupti
+            asperiores molestias exercitationem mollitia velit eveniet ullam reiciendis earum sequi explicabo,
+            repellendus veniam. Corrupti deserunt provident aspernatur sit quibusdam, soluta eveniet mollitia? Minus
+            nesciunt, exercitationem in aliquid consequuntur ipsam neque possimus quaerat. Voluptas eos facere earum
+            quaerat optio ab hic assumenda quam ipsum beatae necessitatibus placeat accusamus, recusandae reiciendis
+            quasi vel voluptate inventore rem rerum voluptatem sed iste? Voluptatem praesentium adipisci, tempore aut
+            rem dolorum nisi numquam modi alias quae, similique maxime, consectetur animi! Aut totam voluptas, odio
+            commodi perspiciatis consequuntur ab ratione dolore itaque nam. Cumque incidunt cum repudiandae quos
+            aspernatur explicabo, necessitatibus quisquam doloremque ducimus numquam nihil aut placeat, nulla illum
+            perspiciatis sed! Minus illum nam quae labore, pariatur mollitia tempore repudiandae sint est non quaerat
+            voluptatem voluptate ipsam, impedit doloribus excepturi eaque voluptatum tempora exercitationem omnis veniam
+            odit totam doloremque a! Sed omnis vero ipsa maxime dicta voluptas deleniti molestias recusandae magni
+            explicabo delectus doloremque mollitia eaque error, culpa aliquid vel quos quasi! Doloremque beatae debitis
+            ullam deleniti odit ad magni natus ex ducimus! Facilis nobis ad libero, minima a quidem neque recusandae
+            inventore maxime eum incidunt dolorem impedit voluptatem eligendi tenetur laudantium repellat? Ducimus, non.
+            Omnis reprehenderit perferendis deleniti molestias ipsa similique libero expedita velit earum voluptate a
+            officia pariatur quibusdam, porro quam repudiandae dolor iusto. Distinctio veritatis ipsam qui corrupti,
+            modi laudantium dolore voluptatum omnis dicta similique voluptate? Expedita itaque, ipsam corrupti error
+            alias debitis quia, odio sed quibusdam enim fuga obcaecati? Non, autem porro totam aut rem dolores eum
+            praesentium natus ducimus quod perspiciatis assumenda quidem excepturi corrupti libero quo id voluptatem
+            inventore est repudiandae explicabo. Magnam ab voluptatibus nobis, iure, error quod nihil harum voluptates
+            earum obcaecati quae, suscipit tempore minus cumque sapiente mollitia animi dolores saepe necessitatibus.
+            Deserunt, eius, atque veniam adipisci perferendis dolorem quam commodi nobis repellendus labore saepe
+            blanditiis reprehenderit corrupti est esse exercitationem voluptatum laborum sapiente ab tenetur? Corrupti
+            ea ullam expedita placeat nemo illum molestias doloremque error delectus, quam autem ut, quo aliquam ipsum
+            deserunt minus rem odio fugit voluptate cupiditate molestiae nobis nulla.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="crown-footer text-white pb-5">
+      <div class="crown-container h-100 pb-md-5">
+        <div class="row h-100 align-items-end">
+          <div class="col-12 col-lg-4 col-xl-3 pr-5">
+            <p class="pb-5">
+              Just shop at our participating online stores and earn cash-back. Get paid to shop online! Shop and earn
+              gift-cards, bitcoin and more!
+            </p>
+            <p>©2020 by CROWNBITS, Inc 2020 All Rights Reserved</p>
+          </div>
+          <div class="col-12 col-lg-4 col-xl-3">
+            <h6 class="pb-3"><strong>Contact Info</strong></h6>
+            <p>
+              Location: 1100 King Street W. Toronto, ON M6K 1E6
+              <br />
+              <br />
+              Email: info@crwnbits.com
+              <br />
+              <br />
+              Business Hours: 10:00am - 6:00pm EST
+            </p>
+            <div class="social-icons">
+              <a href="#" class="mr-2">
+                <img src="../Assets/facebook.svg" alt="Facebook" />
+              </a>
+              <a href="#">
+                <img src="../Assets/instagram.svg" alt="Facebook" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- BOOTSTRAP JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

@@ -1,0 +1,103 @@
+<!-- BANNER -->
+<div class="crown-stores-banner">
+  <%= image_tag "stores-banner.png" %>
+</div>
+
+<section class="container-xl">
+  <!-- FILTER & SEARCH SECTION -->
+  <%= form_tag(stores_path, method: :get, remote: true, id: "stores_form") do%>
+    <div class="filter-container py-5">
+      <div class="dropdown filter-dropdown departments-dropdown">
+        <button
+          class="btn crown-btn crown-btn-lg crown-btn-gold dropdown-toggle"
+          type="button"
+          id="dropdownMenuButton"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          Departments
+        </button>
+        <ul class="dropdown-menu crown-dropdown store_cat" aria-labelledby="dropdownMenuButton">
+          <li class="dropdown-item" value="all">All Stores</li>
+          <% Category.all.uniq.each do|category| %>
+            <li class="dropdown-item" value="<%= category.id %>"><%= category.name %></li>
+          <% end -%>
+        </ul>
+      </div>
+      <div class="dropdown filter-dropdown latest-offers-dropdown">
+        <button
+          class="btn crown-btn crown-btn-lg crown-btn-gold dropdown-toggle"
+          type="button"
+          id="dropdownMenuButton"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          Latest Offers
+        </button>
+        <ul class="dropdown-menu crown-dropdown sort_type" aria-labelledby="dropdownMenuButton">
+         <li class="dropdown-item" >Latest Offers</li>
+         <li class="dropdown-item" value="asc">% cashback low to high</li>
+         <li class="dropdown-item" value="DESC">% cashback hight to low</li>
+        </ul>
+      </div>
+      <div class="crown-search">
+          <%= text_field_tag :query,nil, placeholder:"Search for accessories, brands, travel, sports, business…", class: "search_field" %>
+      </div>
+      <%= hidden_field_tag :cat_id, nil, class: " cat_id_field" %>
+      <%= hidden_field_tag :sort_type, nil, class: " sort_type_field" %>
+    </div>
+    <%= submit_tag "search", class: "d-none search_btn" %>
+  <% end %>
+  <!-- STORES SECTION -->
+  <div class="stores-container pb-5", id="store_card">
+    <%= render "store_card", '@stores': @stores %>
+  </div>
+ <!--  <div class="digg_pagination">
+</div> -->
+ <div class="pb-5">
+        <nav aria-label="Page navigation example">
+          <ul class="crown-pagination justify-content-center digg_pagination">
+            <%= will_paginate @stores %>
+          </ul>
+        </nav>
+      </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+
+<style type="text/css">
+
+.pagination .current {
+  width: 1.5rem;
+  height: 1.5rem;
+  text-align: center;
+  line-height: 1.6;
+  list-style: none;
+  margin: 0 1.2rem;
+  font-weight: 700;
+  border-radius: 3px;
+  border: none;
+  background: var(--color-gold);
+  padding: 0;
+  color: white;
+}
+.pagination {
+  align-items: center;
+}
+.pagination a, .pagination .previous_page,.pagination .next_page {
+  border: none;
+  color: var(--color-dark);
+  padding: 0;
+  margin: 0 1.2rem;
+}
+.pagination .disabled {
+  color: #999;
+  cursor: not-allowed;
+}
+span.prev_page, a.prev_page {
+  display: none;
+}
+</style>

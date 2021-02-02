@@ -1,0 +1,11 @@
+<div class="crown-blog-card">
+  <div class="img-container">
+    <%= image_tag blog.image_url_for_head, alt: blog.image.filename.to_s %>
+  </div>
+  <div class="w-100 px-3 py-4">
+    <h5 class="font-weight-bold">
+      <%= blog.title %>
+    </h5>
+    <%= link_to 'See more', blog_path(blog), class: 'btn crown-btn crown-btn-lg crown-btn-blue d-block mx-auto mb-2' %>
+  </div>
+</div>

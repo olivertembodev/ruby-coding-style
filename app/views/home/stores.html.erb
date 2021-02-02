@@ -1,0 +1,53 @@
+<marquee width="100%" direction="right" height="30px">
+<ul id="menu">
+  <li>Ethereum <span><%= @data["ethereum"]["usd"].to_i %></span> USD</li> |
+  <li>Bitcoin <span><%= @bitcoin["usd"].to_i %></span> USD</li>
+</ul> 
+</marquee>
+
+<section id="team" class="pb-5">
+    <div class="container">
+        <h5 class="section-title h1">Stores</h5>
+        <% @categories.each do |cat| %>
+          <%= link_to cat.name, stores_home_index_path(request.params.merge(cat_id: cat.id)), class: "btn btn-default" %>
+        <% end %>
+        <%= link_to "Cash back Low to High", stores_home_index_path(request.params.merge(sort_type: "asc")), class: "btn btn-default" %>
+        <%= link_to "Cash back High to Low", stores_home_index_path(request.params.merge(sort_type: "desc")), class: "btn btn-default" %>
+        <div class="row">
+          <% @stores.each do |store| %>
+            <!-- Team member -->
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <div class="image-flip" >
+                    <div class="mainflip flip-0">
+                        <div class="frontside">
+                            <div class="card">
+                                <div class="card-body text-center">
+                                    <p><%= image_tag(store.main_image,style: 'height: 150px;width: 250px') if store.main_image.present? %></p>
+                                    <h4 class="card-title">Shop <%= store.name %></h4>
+                                    <p class="card-text">Earn Up to <%= store.reward%>% BTC</p>
+                                    <%= link_to "Shop Now", store.url, class: "btn btn-primary" %>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          <% end %>
+        </div>
+        <div class="digg_pagination">
+            <%= will_paginate @stores, :container => false %>
+        </div>
+    </div>
+</section>
+<!-- Team -->
+
+<style>
+ul#menu li {
+  display:inline;
+  font-weight: 900;
+}
+
+ul#menu li span {
+  color: red;
+}
+</style>
