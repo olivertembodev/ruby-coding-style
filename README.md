@@ -1,1 +1,1 @@
-# ruby-coding-style-crownbits-
+# ruby-coding-style
